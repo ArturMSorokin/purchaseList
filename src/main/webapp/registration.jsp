@@ -11,6 +11,11 @@
 <% } else {%>
 <h1><a title="Registraion" href="/login?register=1">Registration</a> &nbsp;&nbsp; Login</h1>
 <% } %>
+
+<% if (request.getAttribute("warningMessage")!=null) { %>
+<p> <%=request.getAttribute("warningMessage")%> </p>
+<% } %>
+
 <form id="idAutorisation" name="Autorisation" method="post">
   <% if (request.getParameter("register")!=null){%>
     <p>Name &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<input maxlength="35" name="liName" size="35" type="text" /></p>

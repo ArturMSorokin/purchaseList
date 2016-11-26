@@ -1,3 +1,8 @@
 *.idea
-*/build
+build/
 */.*/*
+gradle/
+out/
+PurchasingFiles
+gradlew*
+purchaseList.iml

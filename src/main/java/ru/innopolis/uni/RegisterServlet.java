@@ -86,17 +86,12 @@ public class RegisterServlet extends HttpServlet {
                 }
 
                 if (register==null) {//this is login
-                    ResultSet resultSet = statement.executeQuery("select passhash from Users where name=" + req.getAttribute("liUserName") + ";");
+                    ResultSet resultSet = statement.executeQuery("select passhash from Users where username='" + liUserName + "';");
 
-                    if (resultSet.next()) {
-                        String db = resultSet.getString(1);
-                        String pass = liPassword, hpass = calcHash(liPassword);
-                        int i = 0;
-                        resultSet.first();
-                    }
-
-                    if (resultSet.next()  &&
-                            resultSet.getString(1).equals(calcHash(liPassword))) {
+                    String passDb="aaa",passHash="bbb";
+                    boolean resultNext=false;
+                    if ((resultNext=resultSet.next())  &&
+                            (passDb=resultSet.getString(1)).equals(passHash=calcHash(liPassword))) {
                         resp.addCookie(new Cookie("user", liUserName));
                         openSession(req,resp,liUserName);
                     } else {

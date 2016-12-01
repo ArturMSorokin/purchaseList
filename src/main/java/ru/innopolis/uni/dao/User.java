@@ -1,25 +1,15 @@
-package ru.innopolis.uni;
+package ru.innopolis.uni.dao;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
- * Created by olymp on 28.11.2016.
+ * Created by olymp on 01.12.2016.
  */
-public class User {
-    private String name,
-            username,
-            email,
-            passhash;
-
-    public User() {
-    }
-
-    public User(String name, String username, String email, String passhash) {
-
-        this.name = name;
-        this.username = username;
-        this.email = email;
-        this.passhash = passhash;
-    }
-
+@Entity
+public class User extends UserBase{
+    @Column
     public String getName() {
         return name;
     }
@@ -27,7 +17,7 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-
+    @Column
     public String getUsername() {
         return username;
     }
@@ -35,7 +25,7 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
-
+    @Column
     public String getEmail() {
         return email;
     }
@@ -44,11 +34,21 @@ public class User {
         this.email = email;
     }
 
+    @Column
     public String getPasshash() {
         return passhash;
     }
 
     public void setPasshash(String passhash) {
         this.passhash = passhash;
+    }
+
+    @Id
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

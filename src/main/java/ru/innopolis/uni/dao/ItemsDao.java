@@ -1,4 +1,4 @@
-package ru.innopolis.uni;
+package ru.innopolis.uni.dao;
 
 /**
  * Created by olymp on 28.11.2016.
@@ -6,5 +6,5 @@ package ru.innopolis.uni;
 public class ItemsDao {
     public ItemsDao(String userName, String listName) {} //first listName = default
     public void addItem(String item) {}
-    public 
+    public
 }

@@ -1,4 +1,7 @@
-package ru.innopolis.uni.dao;
+package ru.innopolis.uni.entity;
+
+import ru.innopolis.uni.Pojos.UserBase;
+import ru.innopolis.uni.Pojos.UserModel;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +11,7 @@ import javax.persistence.Id;
  * Created by olymp on 01.12.2016.
  */
 @Entity
-public class User extends UserBase{
+public class User extends UserBase {
     @Column
     public String getName() {
         return name;
@@ -51,4 +54,7 @@ public class User extends UserBase{
     public void setId(long id) {
         this.id = id;
     }
+
+    public UserModel getUserModel() {return new UserModel();}//!!!
+    public void setUserModel() {}
 }

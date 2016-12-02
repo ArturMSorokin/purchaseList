@@ -1,4 +1,4 @@
-package ru.innopolis.uni.dao;
+package ru.innopolis.uni.Pojos;
 
 /**
  * Created by olymp on 01.12.2016.

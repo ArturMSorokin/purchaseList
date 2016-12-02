@@ -1,6 +1,6 @@
-package ru.innopolis.uni;
+package ru.innopolis.uni.Pojos;
 
-import ru.innopolis.uni.dao.UserBase;
+import ru.innopolis.uni.Pojos.UserBase;
 
 /**
  * Created by olymp on 28.11.2016.
@@ -11,7 +11,6 @@ public class UserModel extends UserBase{
     }
 
     public UserModel(String name, String username, String email, String passhash,long id) {
-
         this.name = name;
         this.username = username;
         this.email = email;

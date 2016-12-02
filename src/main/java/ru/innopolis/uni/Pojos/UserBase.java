@@ -1,4 +1,6 @@
-package ru.innopolis.uni.dao;
+package ru.innopolis.uni.Pojos;
+
+import ru.innopolis.uni.Pojos.UserInterface;
 
 /**
  * Created by olymp on 01.12.2016.

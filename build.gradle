@@ -23,9 +23,11 @@ dependencies {
     compile "org.slf4j:slf4j-log4j12:1.7.21"
     testCompile "junit:junit:4.11"
     compile group: 'com.h2database', name: 'h2', version: '1.4.193'
+    compile group: 'org.postgresql', name: 'postgresql', version: '9.3-1100-jdbc4'
     compile group: 'org.mockito', name: 'mockito-all', version: '1.9.5'
     compile group: 'commons-codec', name: 'commons-codec', version: '1.2'
     compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.2.5.Final'
+    compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.0'
 }
 jar.doFirst(){
     version = version + "." + new File("build.number").text;

@@ -1,5 +1,8 @@
 package ru.innopolis.uni.dao;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,17 +15,18 @@ public class ConnectionProviderImpl implements ConnectionProvider,AutoCloseable 
             DBURL = "jdbc:postgresql://localhost:5432/purchaseList",
     USERNAME = "postgres",
     PASSWORD = "12345";
+    Logger log = LoggerFactory.getLogger(getClass());
     private Connection connection=null;
+    private ConnectionProviderImpl() {}
 
+    public static ConnectionProviderImpl getProvider() {
+        return InstanceHolder.INSTANCE;
+    }
     public void close() throws Exception {
         if  (connection!=null)
             connection.close();
     }
 
-    public static ConnectionProviderImpl getProvider() {
-        return InstanceHolder.INSTANCE;
-    }
-    private ConnectionProviderImpl() {}
     public Connection getConnection() throws ClassNotFoundException, SQLException {
         if (connection==null) {
             Class.forName(DRIVER);
@@ -30,6 +34,7 @@ public class ConnectionProviderImpl implements ConnectionProvider,AutoCloseable 
         }
         return connection;
     }
+
     private static class InstanceHolder {
         static final ConnectionProviderImpl  INSTANCE = new ConnectionProviderImpl();
     }

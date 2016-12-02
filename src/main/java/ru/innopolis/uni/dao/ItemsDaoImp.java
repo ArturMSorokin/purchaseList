@@ -44,6 +44,13 @@ public class ItemsDaoImp {
 
     } //first listName = default
 
+    public void addItem(String[] item) {
+        execute(item, PREPARED_ADDITEM);
+    }
+
+    public void removeItem(String[] item) {
+        execute(item,PREPARED_RMITEM);
+    }
     private void execute(String[] items, String prepared) {
         try (Connection connection = ConnectionProviderImpl.getProvider().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(prepared);
@@ -57,13 +64,7 @@ public class ItemsDaoImp {
             log.error(e.getMessage());
         }
     }
-    public void addItem(String[] item) {
-        execute(item, PREPARED_ADDITEM);
-    }
 
-    public void removeItem(String[] item) {
-        execute(item,PREPARED_RMITEM);
-    }
 
     /**
      * Gets all items from list

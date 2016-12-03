@@ -44,12 +44,14 @@ public class ItemsDaoImp {
 
     } //first listName = default
 
-    public void addItem(String[] item) {
-        execute(item, PREPARED_ADDITEM);
+    public void addItem(String item) {
+        String[] list={item};
+        execute(list, PREPARED_ADDITEM);
     }
 
-    public void removeItem(String[] item) {
-        execute(item,PREPARED_RMITEM);
+    public void removeItem(String item) {
+        String[] list={item};
+        execute(list,PREPARED_RMITEM);
     }
     private void execute(String[] items, String prepared) {
         try (Connection connection = ConnectionProviderImpl.getProvider().getConnection();
@@ -68,7 +70,7 @@ public class ItemsDaoImp {
 
     /**
      * Gets all items from list
-     * @return list of items, empty if  error ocurred or table empty.
+     * @return list of items, empty list if  error ocurred or table is empty.
      */
     public List<String> getItems() {
         List<String> items = new LinkedList<>();

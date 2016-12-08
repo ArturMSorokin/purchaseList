@@ -1,17 +1,33 @@
 package ru.innopolis.uni.entity;
 
 import ru.innopolis.uni.Pojos.UserBase;
+import ru.innopolis.uni.Pojos.UserInterface;
 import ru.innopolis.uni.Pojos.UserModel;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by olymp on 01.12.2016.
  */
 @Entity
 public class User extends UserBase {
+
+    public User(UserInterface ui) {
+        copy(ui);
+    }
+
+    public User() {
+    }
+    @Override
+    public UserInterface toModel() {
+        return new UserModel(this);
+    }
+
+    @Override
+    public UserInterface toEntity() {
+        return this;
+    }
+
     @Column
     public String getName() {
         return name;
@@ -47,6 +63,7 @@ public class User extends UserBase {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public long getId() {
         return id;
     }
@@ -55,6 +72,6 @@ public class User extends UserBase {
         this.id = id;
     }
 
-    public UserModel getUserModel() {return new UserModel();}//!!!
+
     public void setUserModel() {}
 }

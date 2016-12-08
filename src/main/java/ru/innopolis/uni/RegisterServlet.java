@@ -11,9 +11,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import org.apache.commons.codec.binary.Hex;
-import java.util.List;
-import java.util.StringJoiner;
-import java.util.Vector;
+
+import java.util.*;
 
 import static org.apache.commons.codec.binary.Hex.encodeHex;
 
@@ -97,6 +96,8 @@ public class RegisterServlet extends HttpServlet {
                     }
                     Vector vercot
                             Thread
+                                    Deque d;
+                    ArrayDeque d;
                     if (resultSet.next()  &&
                             resultSet.getString(1).equals(calcHash(liPassword))) {
                         resp.addCookie(new Cookie("user", liUserName));

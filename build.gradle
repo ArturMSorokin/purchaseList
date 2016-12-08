@@ -22,13 +22,14 @@ dependencies {
     compile "org.slf4j:slf4j-api:1.7.21"
     compile "org.slf4j:slf4j-log4j12:1.7.21"
     testCompile "junit:junit:4.11"
-    compile group: 'com.h2database', name: 'h2', version: '1.4.193'
-    compile group: 'org.postgresql', name: 'postgresql', version: '9.3-1100-jdbc4'
-    compile group: 'org.mockito', name: 'mockito-all', version: '1.9.5'
-    compile group: 'commons-codec', name: 'commons-codec', version: '1.2'
-//    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.2.5.Final'
     compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.0'
     compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.3.RELEASE'
+    compile group: 'org.mockito', name: 'mockito-all', version: '1.9.5'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.193'
+    compile group: 'org.postgresql', name: 'postgresql', version: '9.3-1100-jdbc4'
+    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version: '1.0.1.Final-redhat-3'
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.2.5.Final'
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.2'
     compile group: 'jstl', name: 'jstl', version: '1.2'
 }
 jar.doFirst(){

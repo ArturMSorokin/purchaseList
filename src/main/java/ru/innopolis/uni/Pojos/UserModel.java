@@ -1,16 +1,27 @@
 package ru.innopolis.uni.Pojos;
 
 import ru.innopolis.uni.Pojos.UserBase;
+import ru.innopolis.uni.entity.User;
 
 /**
  * Created by olymp on 28.11.2016.
  */
 public class UserModel extends UserBase{
-
     public UserModel() {
     }
+    public UserModel(UserInterface ui) {
+        copy(ui);
+    }
+    @Override
+    public UserInterface toModel() {
+        return this;
+    }
+    @Override
+    public UserInterface toEntity() {
+        return new User(this);
+    }
 
-    public UserModel(long id,String name, String username, String email, String passhash) {
+    public UserModel(long id, String name, String username, String email, String passhash) {
         this.name = name;
         this.username = username;
         this.email = email;

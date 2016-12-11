@@ -1,30 +1,28 @@
-package ru.innopolis.uni.Pojos;
+package ru.innopolis.uni.entity;
+import ru.innopolis.uni.Pojos.*;
 
-
-import ru.innopolis.uni.entity.Item;
+import javax.persistence.*;
 
 /**
  * Created by MrArtur on 08.12.2016.
  */
-public class ItemModel extends ItemBase {
-
-    public ItemModel() {
-    }
-    public ItemModel(ItemInterface itemInterface) {
+@Entity
+public class Item extends ItemBase {
+    public Item() { }
+    public Item(ItemInterface itemInterface) {
         super(itemInterface);
     }
-
     @Override
     public ItemInterface toModel() {
-        return this;
+        return new ItemModel(this);
     }
-
     @Override
     public ItemInterface toEntity() {
-        return new Item(this);
+        return this;
     }
-
     @Override
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public long getId() {
         return id;
     }
@@ -33,6 +31,7 @@ public class ItemModel extends ItemBase {
         this.id = id;
     }
     @Override
+    @Column
     public long getUserId() {
         return userId;
     }
@@ -40,6 +39,8 @@ public class ItemModel extends ItemBase {
     public void setUserId(long userId) {
         this.userId = userId;
     }
+    @Override
+    @Column
     public String getListName() {
         return listName;
     }
@@ -48,6 +49,7 @@ public class ItemModel extends ItemBase {
         this.listName = listName;
     }
     @Override
+    @Column
     public String getItem() {
         return item;
     }

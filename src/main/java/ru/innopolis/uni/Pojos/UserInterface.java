@@ -6,6 +6,7 @@ package ru.innopolis.uni.Pojos;
 public interface UserInterface {
     public UserInterface toModel();
     public UserInterface toEntity();
+    public boolean equals(UserInterface ui);
     public String getName();
     public void setName(String name);
     public String getUsername();

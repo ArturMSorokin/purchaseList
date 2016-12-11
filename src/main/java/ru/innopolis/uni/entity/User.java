@@ -10,6 +10,7 @@ import javax.persistence.*;
  * Created by olymp on 01.12.2016.
  */
 @Entity
+@Table
 public class User extends UserBase {
 
     public User(UserInterface ui) {

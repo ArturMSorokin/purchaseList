@@ -10,7 +10,7 @@ public class UserModel extends UserBase{
     public UserModel() {
     }
     public UserModel(UserInterface ui) {
-        copy(ui);
+        super(ui);
     }
     @Override
     public UserInterface toModel() {

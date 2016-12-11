@@ -9,7 +9,7 @@
 <% if (request.getParameter("register")!=null){%>
 <h1> Registration &nbsp;&nbsp;<a title="Login" href="/login">Login</a></h1>
 <% } else {%>
-<h1><a title="Registraion" href="/login?register=1">Registration</a> &nbsp;&nbsp; Login</h1>
+<h1><a title="Registraion" href="/register">Registration</a> &nbsp;&nbsp; Login</h1>
 <% } %>
 
 <% if (request.getAttribute("warningMessage")!=null) { %>

@@ -8,4 +8,5 @@ import ru.innopolis.uni.Pojos.UserModel;
 public interface UserDao {
     public void addUpdateUser(UserModel userModel);
     public UserModel getUser(String userName);
+    public void rmUser(String user);
 }

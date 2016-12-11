@@ -17,8 +17,9 @@ import java.util.Objects;
  */
 @Controller
 public class PurchaseListController {
-    @Autowired
+
     private PurchaseListService purchaseListService;
+    @Autowired
     public void setPurchaseListService(PurchaseListService purchaseListService) {
         this.purchaseListService = purchaseListService;
     }
